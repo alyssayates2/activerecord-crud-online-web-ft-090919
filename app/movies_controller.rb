@@ -51,12 +51,20 @@ def can_find_the_first_item_from_the_database_using_id
   Movie.find(1)
 end
 
-def can_find_by_multiple_attributes
+def can_find_by_multiple_attributes(hash)
   # Search Values:
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  __
+    column = hash.keys[0]
+    sql = <<-SQL
+    SELECT *
+    FROM movies
+    WHERE #{column} = ?
+    SQL
+    DB[:conn].execute(sql, hash[column])
+
+  end
 end
 
 def can_find_using_where_clause_and_be_sorted
