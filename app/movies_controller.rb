@@ -57,7 +57,7 @@ def can_find_by_multiple_attributes(hash)
   # release_date == 2000
   # director == "Me"
     column = hash.keys[0]
-    Movie.find_by(column)
+    Movie.find_by
 end
 
 def can_find_using_where_clause_and_be_sorted
