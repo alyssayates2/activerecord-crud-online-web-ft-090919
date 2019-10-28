@@ -33,7 +33,7 @@ end
   m.release_date = 1990
     end
   end
-  
+
 def can_get_the_first_item_in_the_database
   __
 end
